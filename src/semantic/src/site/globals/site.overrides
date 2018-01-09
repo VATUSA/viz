@@ -9,6 +9,7 @@ section.header {
       padding-bottom: 0;
     }
   }
+  margin-bottom: 2em;
 }
 
 body {
@@ -30,4 +31,5 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  z-Index: -1;
 }

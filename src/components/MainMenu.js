@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Menu, Button, Image } from 'semantic-ui-react';
+import '../semantic/dist/components/image.css';
+import '../semantic/dist/components/button.css';
 
 export default () => (
   <Container>
