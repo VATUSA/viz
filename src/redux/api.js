@@ -1,3 +1,4 @@
+// Placeholder, add dev url
 const getUrl = () => {
   if (process.env.NODE_ENV === 'production') {
     return 'http://server.vatusa.net:8081';
