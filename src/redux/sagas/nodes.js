@@ -8,7 +8,7 @@ export default function* watchNodes() {
   yield takeLatest(REQUEST_GET_NODES, receiveGetNodes);
 }
 
-export function* receiveGetNodes(action) {
+export function* receiveGetNodes() {
   try {
     const response = yield call(axios.get, `${ getUrl() }/nodes`);
     yield put({ type: RECEIVE_GET_NODES, response: response.data });

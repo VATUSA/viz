@@ -2,7 +2,7 @@ import * as actions from '../actions/nodes';
 
 const defaultState = {
   isFetching: false,
-  data: {},
+  data: [],
 };
 
 export default function reducer(state = defaultState, action = {}) {

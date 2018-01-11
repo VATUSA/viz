@@ -6,7 +6,6 @@ import configureStore from './redux/configureStore';
 import Layout from './components/layout';
 
 const store = configureStore();
-// const store = {};
 
 const App = () => <Layout store={ store } />;
 
