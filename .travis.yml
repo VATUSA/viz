@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- 9
+sudo: required
+env:
+- DOCKER_COMPOSE_VERSION=1.17.1
+services:
+- docker
+script:
+- npm install
+- npx poi build
+- docker build -t vatusa/ssdock .
+after_success:
+- if [ "$TRAVIS_BRANCH" == "master" ]; then docker login -u "$DOCKER_USERNAME" -p
+  "$DOCKER_PASSWORD"; docker push vatusa/viz; fi
