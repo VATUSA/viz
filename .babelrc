@@ -1,4 +1,4 @@
 {
-  "presets": ["airbnb", ["env", { "targets" : {"chrome": "63"}}], "stage-0"],
+  "presets": ["airbnb", "env"],
   "plugins": ["transform-class-properties"]
 }
