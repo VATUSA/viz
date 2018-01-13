@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Container } from 'semantic-ui-react';
+import { Card, Container } from 'semantic-ui-react';
 
 import '../../semantic/dist/components/container.css';
 import '../../semantic/dist/components/grid.css';
@@ -25,7 +25,10 @@ class Status extends React.Component {
 
   renderNodesList() {
     const { data } = this.props;
-    const list = data.map(node => <ServerCard key={ node.ID } node={ node } />);
+    const list = data.map((node) => {
+      const sortedTasks = node.Tasks.sort((a, b) => a.Service.Name - b.Service.Name);
+      return <ServerCard key={ node.ID } node={ node } tasks={ sortedTasks } />;
+    });
     return list;
   }
 
@@ -35,7 +38,9 @@ class Status extends React.Component {
         <p>
           Status of nodes and assigned tasks
         </p>
-        {this.renderNodesList()}
+        <Card.Group>
+          {this.renderNodesList()}
+        </Card.Group>
       </Container>
     );
   }
@@ -56,6 +61,11 @@ Status.propTypes = {
       ServiceID: PropTypes.string,
       NodeID: PropTypes.string,
       Status: PropTypes.string,
+      Service: PropTypes.shape({
+        ID: PropTypes.string,
+        Image: PropTypes.string,
+        Name: PropTypes.string,
+      }),
       DesiredStatus: PropTypes.string,
     })),
   })),
