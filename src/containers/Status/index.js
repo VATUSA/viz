@@ -8,6 +8,7 @@ import '../../semantic/dist/components/grid.css';
 
 import ServerCard from '../../components/ServerCard';
 import { fetchNodes } from '../../redux/actions/nodes';
+import { fetchAuth } from '../../redux/actions/auth';
 
 let nodeDispatchTimer;
 

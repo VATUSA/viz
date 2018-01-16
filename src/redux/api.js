@@ -7,3 +7,10 @@ const getUrl = () => {
 };
 
 export default getUrl;
+
+export const getApiUrl = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return 'https://api.vatusa.net';
+  }
+  return 'http://api.vatusa.devel';
+};
